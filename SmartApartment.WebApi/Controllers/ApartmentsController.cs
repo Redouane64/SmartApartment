@@ -1,15 +1,16 @@
 ﻿namespace SmartApartment.WebApi.Controllers
 {
+    using System.Threading;
+    using System.Threading.Tasks;
+
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
 
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
+    using SmartApartment.WebApi.Model;
 
     [ApiController]
     [Route("/")]
+    [Produces(Constants.ContentTypes.ApplicationJson)]
     public class ApartmentsController : ControllerBase
     {
 
@@ -21,7 +22,7 @@
         }
 
         [HttpGet(nameof(Search), Name = nameof(Search))]
-        public async Task<IActionResult> Search()
+        public async Task<IActionResult> Search([FromQuery]SearchOptions searchOptions, CancellationToken cancellationToken)
         {
             return Ok();
         }
