@@ -1,4 +1,4 @@
-﻿namespace SmartApartment.WebApi.Model
+﻿namespace SmartApartment.WebApi.Models
 {
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;

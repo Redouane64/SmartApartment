@@ -1,15 +1,26 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{913C36B2-6AB1-4CA0-B358-65D91AB3F2EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartApartment.WebApi", "src\SmartApartment.WebApi\SmartApartment.WebApi.csproj", "{84BE3740-A592-4533-AAE9-DF06819B1578}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartApartment.WebApi", "src\SmartApartment.WebApi\SmartApartment.WebApi.csproj", "{84BE3740-A592-4533-AAE9-DF06819B1578}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{42C6EE01-4AE3-4ADC-B8AC-9163DC110760}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixJson", "tools\FixJson\FixJson.csproj", "{1BF3583E-571F-4311-BE2C-0FA1445F846E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FixJson", "tools\FixJson\FixJson.csproj", "{1BF3583E-571F-4311-BE2C-0FA1445F846E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{5EA1E9DE-A332-46DA-BF56-835C5145A41F}"
+	ProjectSection(SolutionItems) = preProject
+		Assets\mgmt_fixed.json = Assets\mgmt_fixed.json
+		Assets\props_fixed.json = Assets\props_fixed.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7538D51E-4465-41EA-9CBE-B503B637C782}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,9 +30,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{84BE3740-A592-4533-AAE9-DF06819B1578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -49,8 +57,14 @@ Global
 		{1BF3583E-571F-4311-BE2C-0FA1445F846E}.Release|x86.ActiveCfg = Release|Any CPU
 		{1BF3583E-571F-4311-BE2C-0FA1445F846E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{84BE3740-A592-4533-AAE9-DF06819B1578} = {913C36B2-6AB1-4CA0-B358-65D91AB3F2EF}
 		{1BF3583E-571F-4311-BE2C-0FA1445F846E} = {42C6EE01-4AE3-4ADC-B8AC-9163DC110760}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D031AB2-4D6A-4A8D-B8D0-017B423CB053}
 	EndGlobalSection
 EndGlobal

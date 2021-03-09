@@ -1,9 +1,9 @@
-﻿using Newtonsoft.Json;
-
-using System;
-
-namespace FixJson
+﻿namespace FixJson
 {
+    using Newtonsoft.Json;
+
+    using System;
+
     [Serializable]
     public class Property
     {

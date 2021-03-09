@@ -1,8 +1,8 @@
-﻿
-using System;
-
-namespace FixJson
+﻿namespace FixJson
 {
+
+    using System;
+
     [Serializable]
     public class Management
     {

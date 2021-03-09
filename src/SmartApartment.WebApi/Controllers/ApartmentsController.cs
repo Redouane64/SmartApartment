@@ -6,7 +6,7 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
 
-    using SmartApartment.WebApi.Model;
+    using SmartApartment.WebApi.Models;
 
     [ApiController]
     [Route("/")]
