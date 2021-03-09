@@ -1,30 +1,56 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31025.194
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartApartment.WebApi", "SmartApartment.WebApi\SmartApartment.WebApi.csproj", "{4946DDE8-5062-404A-8F78-54017735F4DA}"
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{913C36B2-6AB1-4CA0-B358-65D91AB3F2EF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{70CBCD89-D29F-48EF-BE4E-2F4099C25406}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartApartment.WebApi", "src\SmartApartment.WebApi\SmartApartment.WebApi.csproj", "{84BE3740-A592-4533-AAE9-DF06819B1578}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{42C6EE01-4AE3-4ADC-B8AC-9163DC110760}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixJson", "tools\FixJson\FixJson.csproj", "{1BF3583E-571F-4311-BE2C-0FA1445F846E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4946DDE8-5062-404A-8F78-54017735F4DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4946DDE8-5062-404A-8F78-54017735F4DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4946DDE8-5062-404A-8F78-54017735F4DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4946DDE8-5062-404A-8F78-54017735F4DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F06DEE92-EDC4-44D5-BDEE-F35E4A4C99CE}
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84BE3740-A592-4533-AAE9-DF06819B1578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84BE3740-A592-4533-AAE9-DF06819B1578}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84BE3740-A592-4533-AAE9-DF06819B1578}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{84BE3740-A592-4533-AAE9-DF06819B1578}.Debug|x64.Build.0 = Debug|Any CPU
+		{84BE3740-A592-4533-AAE9-DF06819B1578}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{84BE3740-A592-4533-AAE9-DF06819B1578}.Debug|x86.Build.0 = Debug|Any CPU
+		{84BE3740-A592-4533-AAE9-DF06819B1578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84BE3740-A592-4533-AAE9-DF06819B1578}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84BE3740-A592-4533-AAE9-DF06819B1578}.Release|x64.ActiveCfg = Release|Any CPU
+		{84BE3740-A592-4533-AAE9-DF06819B1578}.Release|x64.Build.0 = Release|Any CPU
+		{84BE3740-A592-4533-AAE9-DF06819B1578}.Release|x86.ActiveCfg = Release|Any CPU
+		{84BE3740-A592-4533-AAE9-DF06819B1578}.Release|x86.Build.0 = Release|Any CPU
+		{1BF3583E-571F-4311-BE2C-0FA1445F846E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BF3583E-571F-4311-BE2C-0FA1445F846E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BF3583E-571F-4311-BE2C-0FA1445F846E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1BF3583E-571F-4311-BE2C-0FA1445F846E}.Debug|x64.Build.0 = Debug|Any CPU
+		{1BF3583E-571F-4311-BE2C-0FA1445F846E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1BF3583E-571F-4311-BE2C-0FA1445F846E}.Debug|x86.Build.0 = Debug|Any CPU
+		{1BF3583E-571F-4311-BE2C-0FA1445F846E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BF3583E-571F-4311-BE2C-0FA1445F846E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BF3583E-571F-4311-BE2C-0FA1445F846E}.Release|x64.ActiveCfg = Release|Any CPU
+		{1BF3583E-571F-4311-BE2C-0FA1445F846E}.Release|x64.Build.0 = Release|Any CPU
+		{1BF3583E-571F-4311-BE2C-0FA1445F846E}.Release|x86.ActiveCfg = Release|Any CPU
+		{1BF3583E-571F-4311-BE2C-0FA1445F846E}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{84BE3740-A592-4533-AAE9-DF06819B1578} = {913C36B2-6AB1-4CA0-B358-65D91AB3F2EF}
+		{1BF3583E-571F-4311-BE2C-0FA1445F846E} = {42C6EE01-4AE3-4ADC-B8AC-9163DC110760}
 	EndGlobalSection
 EndGlobal
