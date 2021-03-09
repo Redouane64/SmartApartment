@@ -1,12 +1,11 @@
-﻿using Newtonsoft.Json;
-
-using System;
-using System.IO;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-
-namespace FixJson
+﻿namespace FixJson
 {
+    using Newtonsoft.Json;
+
+    using System;
+    using System.IO;
+    using System.Text.RegularExpressions;
+    using System.Threading.Tasks;
 
     using static System.Console;
 
@@ -36,7 +35,8 @@ namespace FixJson
 
 
                 // remove space in properties.json file at lan and lat fields values
-                json = Regex.Replace(json, "(?<=(\\+|\\-|.|\\d))\\s(?=(\\d|\\+|.|e))", "", RegexOptions.Multiline);
+                var regex = "(?<=\\+|\\-|\\.|\\d|e|E)\\s(?=(\\d|\\+|\\.|e|E))";
+                json = Regex.Replace(json, regex, "", RegexOptions.Multiline);
 
                 // write to output file
                 var outFile = args[1];
