@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "FixJson": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\Redouane\\Desktop\\Back End Developer (2021)\\properties.json\" properties.json -p"
+    }
+  }
+}
