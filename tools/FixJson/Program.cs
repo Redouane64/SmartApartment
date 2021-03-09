@@ -17,14 +17,14 @@ namespace FixJson
          * FixJSON is program to fix mgmnt.json and properties.json files.
          * 
          * usage example: FixJson.exe path/to/input.json path/to/output.json -m or -p
-         * 
+         * -m for Management type
+         * -p for Properties type
          */
         static async Task Main(string[] args)
         {
-            var filename = args[0];
-
             try
             {
+                var filename = args[0];
 
                 // replace new line (\r\n) with space and then replace \r with empty character. 
                 var json = File.ReadAllText(filename).Replace(Environment.NewLine, " ").Replace("\r", "");
@@ -34,7 +34,6 @@ namespace FixJson
                 // replace spaces between numbers with empty characters.
                 json = Regex.Replace(json, "(?<=\\d)\\s(?=\\d)", "", RegexOptions.Multiline);
 
-                // json = Regex.Replace(json, "(?<=\\d)\\s(?=e)", "", RegexOptions.Multiline);
 
                 // remove space in properties.json file at lan and lat fields values
                 json = Regex.Replace(json, "(?<=(\\+|\\-|.|\\d))\\s(?=(\\d|\\+|.|e))", "", RegexOptions.Multiline);
@@ -50,9 +49,7 @@ namespace FixJson
                 if (args[2] == "-m") // for managments data json file
                 {
                     _ = JsonSerializer.Create().Deserialize<MgmtRoot[]>(new JsonTextReader(new StringReader(json)));
-                }
-
-                if (args[2] == "-p") // for properties data json file
+                } else if (args[2] == "-p") // for properties data json file
                 {
                     _ = JsonSerializer.Create().Deserialize<PropertyRoot[]>(new JsonTextReader(new StringReader(json)));
                 }
