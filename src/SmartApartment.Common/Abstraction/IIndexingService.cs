@@ -2,10 +2,12 @@
 {
     using System.Threading;
     using System.Threading.Tasks;
+    
+    using Nest;
 
     public interface IIndexingService<TDocument> where TDocument : class
     {
-        Task CreateIndex(string name, CancellationToken cancellationToken = default);
-        Task IndexDocument(TDocument document, CancellationToken cancellationToken = default);
+        Task<CreateIndexResponse> CreateIndex(string name, CancellationToken cancellationToken = default);
+        Task<IndexResponse> IndexDocument(TDocument document, CancellationToken cancellationToken = default);
     }
 }

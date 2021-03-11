@@ -17,9 +17,9 @@
         }
 
         // Create or update index for Document type with mapping.
-        public async Task CreateIndex(string name, CancellationToken cancellationToken = default)
+        public async Task<CreateIndexResponse> CreateIndex(string name, CancellationToken cancellationToken = default)
         {
-            await this.elasticClient.Indices.CreateAsync(
+            return await this.elasticClient.Indices.CreateAsync(
                 name,
                 descriptor => descriptor.Map(
                     mappingDescriptor =>
@@ -31,9 +31,9 @@
         }
 
         // Index new Document object.
-        public async Task IndexDocument(Document document, CancellationToken cancellationToken = default)
+        public async Task<IndexResponse> IndexDocument(Document document, CancellationToken cancellationToken = default)
         {
-            await this.elasticClient.IndexDocumentAsync(document, cancellationToken);
+            return await this.elasticClient.IndexDocumentAsync(document, cancellationToken);
         }
     }
 }
