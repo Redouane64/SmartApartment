@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleDataUploader", "tools
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartApartment.Common", "src\SmartApartment.Common\SmartApartment.Common.csproj", "{163674EA-216F-4BF5-AE3D-5F0C98AD62FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocsFinder", "tools\DocsFinder\DocsFinder.csproj", "{100A2B14-8631-4752-88BF-AE6F77F930AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,18 @@ Global
 		{163674EA-216F-4BF5-AE3D-5F0C98AD62FE}.Release|x64.Build.0 = Release|Any CPU
 		{163674EA-216F-4BF5-AE3D-5F0C98AD62FE}.Release|x86.ActiveCfg = Release|Any CPU
 		{163674EA-216F-4BF5-AE3D-5F0C98AD62FE}.Release|x86.Build.0 = Release|Any CPU
+		{100A2B14-8631-4752-88BF-AE6F77F930AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{100A2B14-8631-4752-88BF-AE6F77F930AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{100A2B14-8631-4752-88BF-AE6F77F930AD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{100A2B14-8631-4752-88BF-AE6F77F930AD}.Debug|x64.Build.0 = Debug|Any CPU
+		{100A2B14-8631-4752-88BF-AE6F77F930AD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{100A2B14-8631-4752-88BF-AE6F77F930AD}.Debug|x86.Build.0 = Debug|Any CPU
+		{100A2B14-8631-4752-88BF-AE6F77F930AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{100A2B14-8631-4752-88BF-AE6F77F930AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{100A2B14-8631-4752-88BF-AE6F77F930AD}.Release|x64.ActiveCfg = Release|Any CPU
+		{100A2B14-8631-4752-88BF-AE6F77F930AD}.Release|x64.Build.0 = Release|Any CPU
+		{100A2B14-8631-4752-88BF-AE6F77F930AD}.Release|x86.ActiveCfg = Release|Any CPU
+		{100A2B14-8631-4752-88BF-AE6F77F930AD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +108,7 @@ Global
 		{1BF3583E-571F-4311-BE2C-0FA1445F846E} = {42C6EE01-4AE3-4ADC-B8AC-9163DC110760}
 		{2CDB37BE-AA39-4E14-B4C6-EAAC9BC1EA34} = {42C6EE01-4AE3-4ADC-B8AC-9163DC110760}
 		{163674EA-216F-4BF5-AE3D-5F0C98AD62FE} = {913C36B2-6AB1-4CA0-B358-65D91AB3F2EF}
+		{100A2B14-8631-4752-88BF-AE6F77F930AD} = {42C6EE01-4AE3-4ADC-B8AC-9163DC110760}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D031AB2-4D6A-4A8D-B8D0-017B423CB053}
