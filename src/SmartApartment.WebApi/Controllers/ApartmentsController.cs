@@ -22,7 +22,7 @@
         }
 
         [HttpGet(nameof(Search), Name = nameof(Search))]
-        public async Task<IActionResult> Search([FromQuery]SearchOptions searchOptions, CancellationToken cancellationToken)
+        public async Task<IActionResult> Search([FromQuery] SearchOptions searchOptions, CancellationToken cancellationToken)
         {
             return Ok();
         }

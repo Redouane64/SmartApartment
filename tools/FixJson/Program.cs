@@ -74,7 +74,7 @@ try
         _ = serializer.Deserialize<PropertyRoot[]>(new JsonTextReader(new StringReader(json)));
     }
 }
-catch(Exception ex)
+catch (Exception ex)
 {
     Error.WriteLine($"Unable to parse JSON files: {ex.Message}");
 }

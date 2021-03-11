@@ -6,11 +6,13 @@
 
     public class ManagementRoot
     {
-        public int? Id { 
-            get {
+        public int? Id
+        {
+            get
+            {
                 // Use Id of child document.
                 return this.Management?.ManagementId;
-            } 
+            }
         }
 
         [JsonProperty("mgmt")]

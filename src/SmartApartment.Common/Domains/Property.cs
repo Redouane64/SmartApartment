@@ -18,13 +18,13 @@
 
         [JsonProperty("name")]
         public string Name { get; set; }
-        
+
         [JsonProperty("market")]
         public string Market { get; set; }
 
         [JsonProperty("state")]
         public string State { get; set; }
-        
+
         [JsonProperty("formerName")]
         public string FormerName { get; set; }
 

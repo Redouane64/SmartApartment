@@ -23,18 +23,18 @@
         public async Task CreateIndex(string name, CancellationToken cancellationToken = default)
         {
             await this.elasticClient.Indices.CreateAsync(
-                name, 
-                descriptor =>  descriptor.Map(
-                    mappingDescriptor => 
+                name,
+                descriptor => descriptor.Map(
+                    mappingDescriptor =>
                         mappingDescriptor
                             .AutoMap<Document>()
-                    ), 
+                    ),
                 cancellationToken
             );
         }
 
         public async Task<IndexResponse> IndexDocument<TDocument>(
-            TDocument document, 
+            TDocument document,
             CancellationToken cancellationToken = default)
             where TDocument : class
         {

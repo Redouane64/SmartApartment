@@ -14,7 +14,7 @@ using static System.Console;
 string mgmntJsonFile = null;
 string propertiesJsonFile = null;
 string uri = null;
-string indexName  = null;
+string indexName = null;
 
 try
 {

@@ -14,10 +14,10 @@
         /// </summary>
         [JsonProperty("mgmtID", NullValueHandling = NullValueHandling.Ignore)]
         public int? ManagementId { get; set; }
-        
+
         [JsonProperty("name")]
         public string Name { get; set; }
-        
+
         [JsonProperty("market")]
         public string Market { get; set; }
 
