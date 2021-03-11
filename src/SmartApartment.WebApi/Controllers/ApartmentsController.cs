@@ -5,7 +5,7 @@
 
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
-
+    using SmartApartment.Common.Abstraction;
     using SmartApartment.WebApi.Models;
 
     [ApiController]
@@ -13,18 +13,19 @@
     [Produces(Constants.ContentTypes.ApplicationJson)]
     public class ApartmentsController : ControllerBase
     {
-
+        private readonly ISearchService searchService;
         private readonly ILogger<ApartmentsController> _logger;
 
-        public ApartmentsController(ILogger<ApartmentsController> logger)
+        public ApartmentsController(ISearchService searchService, ILogger<ApartmentsController> logger)
         {
-            _logger = logger;
+            this.searchService = searchService;
+            this._logger = logger;
         }
 
         [HttpGet(nameof(Search), Name = nameof(Search))]
         public async Task<IActionResult> Search([FromQuery] SearchOptions searchOptions, CancellationToken cancellationToken)
         {
-            return Ok();
+            return Ok(await this.searchService.Search(null));
         }
 
     }
