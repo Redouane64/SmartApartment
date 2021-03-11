@@ -1,9 +1,5 @@
 ﻿namespace SmartApartment.Common.Services
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
     using System.Threading;
     using System.Threading.Tasks;
     using Abstraction;
@@ -11,7 +7,7 @@
 
     using SmartApartment.Common.Domains;
 
-    public sealed class IndexingService : IIndexingService
+    public sealed class IndexingService : IIndexingService<Document>
     {
         private readonly IElasticClient elasticClient;
 
@@ -20,6 +16,7 @@
             this.elasticClient = elasticClient;
         }
 
+        // Create or update index for Document type with mapping.
         public async Task CreateIndex(string name, CancellationToken cancellationToken = default)
         {
             await this.elasticClient.Indices.CreateAsync(
@@ -33,12 +30,10 @@
             );
         }
 
-        public async Task<IndexResponse> IndexDocument<TDocument>(
-            TDocument document,
-            CancellationToken cancellationToken = default)
-            where TDocument : class
+        // Index new Document object.
+        public async Task IndexDocument(Document document, CancellationToken cancellationToken = default)
         {
-            return await this.elasticClient.IndexDocumentAsync(document, cancellationToken);
+            await this.elasticClient.IndexDocumentAsync(document, cancellationToken);
         }
     }
 }
