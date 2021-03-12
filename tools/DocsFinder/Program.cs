@@ -29,10 +29,11 @@ var connection = new ConnectionSettings(new Uri(uri))
 
 var client = new ElasticClient(connection);
 
-string keyword = "bell";
-string[] markets = { "Sacramento", "Atlanta" };
+string keyword = "oak hill";
+string[] markets = { "Atlanta", "Sacramento", "Los Angeles" };
 
 
+// convert market terms to queries.
 IEnumerable<Func<QueryContainerDescriptor<Document>, QueryContainer>>
  marketsQueryGenerator(string[] markets)
 {
@@ -49,33 +50,33 @@ IEnumerable<Func<QueryContainerDescriptor<Document>, QueryContainer>>
     }
 }
 
-var multiMatchQuery = marketsQueryGenerator(markets).ToList();
+// search fields selector.
+Func<FieldsDescriptor<Document>, IPromise<Fields>> fieldsSelector =
+    f => f.Field(e => e.Property.Name)
+                    .Field(e => e.Management.Name)
+                    .Field(e => e.Property.FormerName)
+                    .Field(e => e.Property.StreetAddress)
+                    .Field(e => e.Property.State)
+                    .Field(e => e.Management.State);
+
+// keyword query.
 Func<QueryContainerDescriptor<Document>, QueryContainer> keywordQuery =
-    q => q.MultiMatch(
-        s => s.Fields(
-            f => f.Field(e => e.Property.Name)
-                .Field(e => e.Management.Name)
-                .Field(e => e.Property.FormerName)
-                .Field(e => e.Property.StreetAddress)
-                .Field(e => e.Property.State)
-                .Field(e => e.Management.State)
-        ).Query(keyword)
+    q => q.SimpleQueryString(
+        s => s.Fields(fieldsSelector).Query(keyword)
     );
 
 Func<SearchDescriptor<Document>, ISearchRequest> selector = s =>
 s.Size(size)
  .Query(
-    q => q.Bool(
-        dm => dm.Filter(
-            
-            q => q.Bool(
-                b => b.Should(multiMatchQuery)
-            ),
-            
-            keywordQuery
-        )
-    )
-    
+     q => q.Bool(
+         b => b.Should(
+             keywordQuery
+         ).Must(
+             t => t.Bool(
+                 b => b.Should(marketsQueryGenerator(markets))
+             )
+         )
+     )
 );
 
 var result = await client.SearchAsync<Document>(selector);
@@ -100,4 +101,6 @@ foreach (var document in result.Documents)
     ));
 }
 
-WriteLine(sb.ToString());
+// WriteLine(sb.ToString());
+
+System.IO.File.WriteAllText("search_output.txt", sb.ToString());
