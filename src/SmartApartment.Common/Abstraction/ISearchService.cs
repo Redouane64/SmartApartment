@@ -10,7 +10,7 @@
     {
         Task<IEnumerable<Document>> Search(
             string keyword, 
-            string market = null, 
+            string markets = null, 
             int limit = 25, 
             CancellationToken cancellationToken = default);
     }
