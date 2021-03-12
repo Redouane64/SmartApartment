@@ -16,9 +16,11 @@
     using Microsoft.OpenApi.Models;
     using Nest;
     using SmartApartment.Common.Abstraction;
+    using SmartApartment.Common.Domains;
     using SmartApartment.Common.Services;
     using SmartApartment.WebApi.Filters;
     using SmartApartment.WebApi.Options;
+    using SmartApartment.WebApi.ViewModels;
 
     public class Startup
     {
@@ -33,10 +35,12 @@
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers()
-                    .AddJsonOptions(options => {
+                    .AddJsonOptions(options =>
+                    {
                         options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
                     })
-                    .AddMvcOptions(options => {
+                    .AddMvcOptions(options =>
+                    {
                         options.Filters.Add<JsonExceptionFilter>();
                     });
 
@@ -45,13 +49,20 @@
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Smart Apartment Data API", Version = "v1" });
             });
 
+            services.AddAutoMapper(config =>
+            {
+                config.CreateMap<Document, DocumentViewModel>();
+            });
+
             services.Configure<ElasticsearchOptions>(Configuration.GetSection("Elasticsearch"));
 
-            services.AddSingleton<IElasticClient>((provider) => {
+            services.AddSingleton<IElasticClient>((provider) =>
+            {
                 var options = provider.GetRequiredService<IOptions<ElasticsearchOptions>>().Value;
 
                 // configure default connection settings
-                var connectionSettings = new ConnectionSettings(new Uri(options.Uri));
+                var connectionSettings = new ConnectionSettings(new Uri(options.Uri))
+                    .DefaultIndex(options.DefaultIndex);
 
                 // TODO: add mapping of we are goint to use this client connection to
                 // index more documents.
