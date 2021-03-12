@@ -5,6 +5,7 @@
 
     public class Document
     {
+        // Id for elasticsearch indexing
         public int? Id
         {
             get
