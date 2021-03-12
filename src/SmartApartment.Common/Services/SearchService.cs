@@ -48,9 +48,11 @@
             // query with markets list provided.
             if (markets is not null)
             {
+                var marketsSplit = markets.Trim(',').Split(",");
+
                 query = new Func<BoolQueryDescriptor<Document>, IBoolQuery>(
                     b => b.Should(keywordQuery)
-                          .Must(t => t.Bool(b => b.Should(toMarketsQueries(markets.Split(",")))))
+                          .Must(t => t.Bool(b => b.Should(toMarketsQueries(marketsSplit))))
                 );
             } else
             // query without market list
