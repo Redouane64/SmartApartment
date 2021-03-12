@@ -6,7 +6,6 @@
     /// <summary>
     /// Represent a Property document.
     /// </summary>
-    [ElasticsearchType(IdProperty = nameof(Property.PropertyId))]
     public class Property
     {
         /// <summary>
