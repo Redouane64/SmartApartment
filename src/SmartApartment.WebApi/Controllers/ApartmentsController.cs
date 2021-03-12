@@ -32,12 +32,14 @@
 
         [HttpGet(nameof(Search), Name = nameof(Search))]
         [ProducesResponseType(typeof(CollectionResult<DocumentViewModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorViewModel), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Search([FromQuery] SearchOptions searchOptions,
                                                 CancellationToken cancellationToken)
         {
             var searchResult = await this.searchService.Search(
                 searchOptions.Keyword, 
-                searchOptions.Market, 
+                searchOptions.Markets, 
                 searchOptions.Limit,
                 cancellationToken
             );

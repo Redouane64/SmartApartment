@@ -10,9 +10,13 @@
         [Required]
         public string Keyword { get; set; }
 
-        public string Market { get; set; }
+        /// <summary>
+        /// Markets scope separated by comma (,)
+        /// </summary>
+        /// <example>Atlanta, Sacramento</example>
+        public string Markets { get; set; }
 
-        [Range(0, DefaultLimit)]
+        [Range(0, 999)]
         [DefaultValue(DefaultLimit)]
         public int Limit { get; set; }
     }
