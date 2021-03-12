@@ -2,7 +2,7 @@
 {
     using System.Threading;
     using System.Threading.Tasks;
-    
+
     using Nest;
 
     public interface IIndexingService<TDocument> where TDocument : class

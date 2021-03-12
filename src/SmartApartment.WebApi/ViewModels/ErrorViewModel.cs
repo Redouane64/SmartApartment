@@ -1,4 +1,4 @@
-namespace SmartApartment.WebApi.ViewModels
+﻿namespace SmartApartment.WebApi.ViewModels
 {
     public class ErrorViewModel
     {

@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Hosting;
@@ -18,7 +18,7 @@ namespace SmartApartment.WebApi.Filters
         public void OnException(ExceptionContext context)
         {
             var error = new ErrorViewModel();
-            
+
             if (_env.IsDevelopment())
             {
                 error.Message = context.Exception.Message;
