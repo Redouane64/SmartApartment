@@ -16,11 +16,12 @@
         // it is preferrable to me to be more explicit in my code.
         private readonly Func<FieldsDescriptor<Document>, IPromise<Fields>> searchableFields =
             f => f.Field(e => e.Property.Name)
-                            .Field(e => e.Management.Name)
-                            .Field(e => e.Property.FormerName)
-                            .Field(e => e.Property.StreetAddress)
-                            .Field(e => e.Property.State)
-                            .Field(e => e.Management.State);
+                    .Field(e => e.Management.Name)
+                    .Field(e => e.Property.FormerName)
+                    .Field(e => e.Property.StreetAddress)
+                    .Field(e => e.Property.State)
+                    .Field(e => e.Management.State)
+                    .Field(e => e.Property.City);
         private readonly IElasticClient client;
 
         public SearchService(IElasticClient client)
