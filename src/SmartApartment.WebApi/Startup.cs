@@ -64,7 +64,7 @@
                 var connectionSettings = new ConnectionSettings(new Uri(options.Uri))
                     .DefaultIndex(options.DefaultIndex);
 
-                // TODO: add mapping of we are goint to use this client connection to
+                // TODO: add mapping if we are going to use this client connection to
                 // index more documents.
 
                 return new ElasticClient(connectionSettings);

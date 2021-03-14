@@ -9,9 +9,9 @@
     public interface ISearchService
     {
         Task<IEnumerable<Document>> Search(
-            string keyword, 
-            string markets = null, 
-            int limit = 25, 
+            string keyword,
+            string markets = null,
+            int limit = 25,
             CancellationToken cancellationToken = default);
     }
 }

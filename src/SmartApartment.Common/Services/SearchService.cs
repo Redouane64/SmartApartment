@@ -22,6 +22,7 @@
                     .Field(e => e.Property.State)
                     .Field(e => e.Management.State)
                     .Field(e => e.Property.City);
+
         private readonly IElasticClient client;
 
         public SearchService(IElasticClient client)
@@ -55,7 +56,8 @@
                     b => b.Should(keywordQuery)
                           .Must(t => t.Bool(b => b.Should(toMarketsQueries(marketsSplit))))
                 );
-            } else
+            }
+            else
             // query without market list
             {
                 query = new Func<BoolQueryDescriptor<Document>, IBoolQuery>(

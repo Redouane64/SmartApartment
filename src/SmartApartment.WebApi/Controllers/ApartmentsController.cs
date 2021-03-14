@@ -38,8 +38,8 @@
                                                 CancellationToken cancellationToken)
         {
             var searchResult = await this.searchService.Search(
-                searchOptions.Keyword, 
-                searchOptions.Markets, 
+                searchOptions.Keyword,
+                searchOptions.Markets,
                 searchOptions.Limit,
                 cancellationToken
             );

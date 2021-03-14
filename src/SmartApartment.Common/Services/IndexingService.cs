@@ -14,7 +14,7 @@
 
         public IndexingService(IElasticClient elasticClient)
         {
-            this.elasticClient = elasticClient;
+            this.elasticClient = elasticClient ?? throw new ArgumentNullException(nameof(elasticClient));
         }
 
         // Create or update index for Document type with mapping.
