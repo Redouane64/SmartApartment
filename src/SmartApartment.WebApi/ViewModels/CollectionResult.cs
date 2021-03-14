@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace SmartApartment.WebApi.ViewModels
+﻿namespace SmartApartment.WebApi.ViewModels
 {
+    using System.Collections.Generic;
+
     public class CollectionResult<T>
         where T : class
     {

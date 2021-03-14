@@ -1,8 +1,9 @@
-﻿using System.Text.Json.Serialization;
-using SmartApartment.Common.Domains;
-
-namespace SmartApartment.WebApi.ViewModels
+﻿namespace SmartApartment.WebApi.ViewModels
 {
+    using System.Text.Json.Serialization;
+
+    using SmartApartment.Common.Domains;
+
     public class DocumentViewModel
     {
         [JsonPropertyName("mgmt")]
